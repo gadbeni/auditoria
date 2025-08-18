@@ -20,7 +20,7 @@ class HomeController extends Controller
         $query_search = $search ? '(title like "%'.$search.'%" or tags like "%'.$search.'%" or description like "%'.$search.'%")' : 1;
         $list = Publication::whereRaw($query_search)
                     ->whereYear('publish_date', $year)
-                    ->where('deleted_at', NULL)->paginate(10);
+                    ->where('deleted_at', NULL)->orderBy('publish_date', 'DESC')->paginate(10);
         return view('list', compact('list'));
     }
 }

@@ -31,7 +31,7 @@
         <div class="row">
           <div class="col-md-3">
             <ul class="list-group">
-              @foreach ($years as $item)
+              @foreach ($years->sortByDesc('year') as $item)
                 <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-{{ $item->year }} @if($item->year == date('Y')) active-item @endif" data-year="{{ $item->year }}" style="cursor: pointer">
                   <a href="#" class="a-year" data-year="{{ $item->year }}">{{ $item->year }}</a>
                   <span class="badge rounded-pill bg-success">{{ $item->count }}</span>
@@ -121,33 +121,32 @@
 
 @section('script')
   <script>
+    var year = new Date().getFullYear();
     $(document).ready(function(){
-      let date = new Date();
-      getList(date.getFullYear());
+      getList();
       $('.card-item-link').click(function(){
         let slug = $(this).data('slug');
         window.location = "{{ url('') }}/"+slug;
       });
 
       $('.list-group-item').click(function(){
-        let year = $(this).data('year');
-        getList(year);
+        year = $(this).data('year');
+        getList();
         $('.list-group-item').removeClass('active-item');
         $(this).addClass('active-item');
       });
       $('.a-year').click(function(e){
         e.preventDefault();
-        let year = $(this).data('year');
+        year = $(this).data('year');
         getList(year);
         $('.list-group-item').removeClass('active-item');
         $(`.list-group-item-${year}`).addClass('active-item');
       });
     });
 
-    function getList(year, page = 1){
+    function getList(page = 1){
       let search = $('#form-search input[name="search"]').val();
       let url = "{{ url('') }}";
-      console.log(`${url}/search/${search}?page=${page}`)
       $.get(`${url}/search/${year}/${search ? search : ''}?page=${page}`, function(res){
         $('#list-details').html(res);
       });
