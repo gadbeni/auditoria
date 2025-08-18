@@ -34,8 +34,8 @@ class DataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => NULL,
-                'created_at' => '2021-06-02 17:55:30',
-                'updated_at' => '2021-06-02 17:55:30',
+                'created_at' => '2021-06-02 13:55:30',
+                'updated_at' => '2021-06-02 13:55:30',
             ),
             1 => 
             array (
@@ -52,8 +52,8 @@ class DataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => NULL,
-                'created_at' => '2021-06-02 17:55:30',
-                'updated_at' => '2021-06-02 17:55:30',
+                'created_at' => '2021-06-02 13:55:30',
+                'updated_at' => '2021-06-02 13:55:30',
             ),
             2 => 
             array (
@@ -70,8 +70,8 @@ class DataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => NULL,
-                'created_at' => '2021-06-02 17:55:31',
-                'updated_at' => '2021-06-02 17:55:31',
+                'created_at' => '2021-06-02 13:55:31',
+                'updated_at' => '2021-06-02 13:55:31',
             ),
             3 => 
             array (
@@ -88,8 +88,8 @@ class DataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":"table_name","order_display_column":"table_name","order_direction":"asc","default_search_key":null}',
-                'created_at' => '2021-10-05 10:10:30',
-                'updated_at' => '2021-10-05 10:10:30',
+                'created_at' => '2021-10-05 06:10:30',
+                'updated_at' => '2021-10-05 06:10:30',
             ),
             4 => 
             array (
@@ -106,8 +106,8 @@ class DataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
-                'created_at' => '2021-10-06 12:29:38',
-                'updated_at' => '2021-10-06 14:36:48',
+                'created_at' => '2021-10-06 08:29:38',
+                'updated_at' => '2021-10-06 10:36:48',
             ),
             5 => 
             array (
@@ -124,8 +124,8 @@ class DataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
-                'created_at' => '2021-10-06 12:40:05',
-                'updated_at' => '2022-01-26 12:35:51',
+                'created_at' => '2021-10-06 08:40:05',
+                'updated_at' => '2022-01-26 08:35:51',
             ),
             6 => 
             array (
@@ -142,8 +142,8 @@ class DataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
-                'created_at' => '2021-10-11 11:31:09',
-                'updated_at' => '2021-10-11 11:31:09',
+                'created_at' => '2021-10-11 07:31:09',
+                'updated_at' => '2021-10-11 07:31:09',
             ),
             7 => 
             array (
@@ -160,8 +160,8 @@ class DataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
-                'created_at' => '2021-10-11 11:38:31',
-                'updated_at' => '2021-10-11 11:46:13',
+                'created_at' => '2021-10-11 07:38:31',
+                'updated_at' => '2021-10-11 07:46:13',
             ),
         ));
         

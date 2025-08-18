@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>@yield('page_title', 'Bienvenido a Transparencia')</title>
+    <title>@yield('page_title', 'Bienvenido a Auditoría ')</title>
     <meta name="description" content="@yield('page_description', setting('site.description'))">
-    <meta name="keywords" content="beni, transparencia, bolivia, gobernacion, informes">
+    <meta name="keywords" content="beni, auditoria, bolivia, gobernacion, informes">
 
     <meta property="og:url"           content="@yield('page_url', url(''))" />
     <meta property="og:type"          content="blog" />
-    <meta property="og:title"         content="@yield('page_title', 'Bienvenido a Transparencia')" />
+    <meta property="og:title"         content="@yield('page_title', 'Bienvenido a Auditoría oria')" />
     <meta property="og:description"   content="@yield('page_description', setting('site.description'))" />
     <meta property="og:image"         content="@yield('page_background', asset('images/site-banner.jpeg'))" />
 
@@ -84,7 +84,7 @@
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a href="{{ url('') }}" class="nav-link scrollto active">Transparencia</a></li>
+        <li><a href="{{ url('') }}" class="nav-link scrollto active">Auditoría</a></li>
         <li><a href="https://siscor.ml" class="nav-link">SISCOR</a></li>
         <li><a href="#" class="nav-link">Turismo</a></li>
         <li><a href="#" class="nav-link">Agenda</a></li>
