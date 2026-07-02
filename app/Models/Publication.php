@@ -11,4 +11,9 @@ class Publication extends Model
     protected $fillable = [
         'publications_type_id', 'user_id', 'title', 'tags', 'description', 'publish_date', 'enact_date', 'file', 'highlight', 'view'
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(PublicationsType::class, 'publications_type_id');
+    }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -38,6 +38,8 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('lp/assets/css/style.css') }}" rel="stylesheet">
+    <!-- Custom modern theme (override layer) -->
+    <link href="{{ asset('lp/assets/css/custom.css') }}" rel="stylesheet">
 
     <!-- =======================================================
     * Template Name: BizLand - v3.3.0
@@ -85,9 +87,10 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a href="{{ url('') }}" class="nav-link scrollto active">Auditoría</a></li>
-        <li><a href="https://siscor.ml" class="nav-link">SISCOR</a></li>
-        <li><a href="#" class="nav-link">Turismo</a></li>
-        <li><a href="#" class="nav-link">Agenda</a></li>
+        <li><a href="https://gaceta.beni.gob.bo/" target="_blank" class="nav-link">Gaceta</a></li>
+        <li><a href="https://transparencia.beni.gob.bo/" target="_blank" class="nav-link">Transparencia</a></li>
+        <li><a href="https://beni.gob.bo/" target="_blank" class="nav-link">Gobernación</a></li>
+        <li><a href="{{ url('admin') }}" class="nav-cta"><i class="bi bi-box-arrow-in-right"></i> Ingresar</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->

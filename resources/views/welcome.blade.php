@@ -5,16 +5,57 @@
   @php
     $site_banner = Voyager::setting('site.banner', '');
   @endphp
-  <section id="hero" class="d-flex align-items-center" style='background: url("{{ $site_banner ? Voyager::image($site_banner) : asset('images/site-banner.jpeg') }}") top left;'>
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1 class="text-white">Bienvenido a <span>{{ setting('site.title') }}</span></h1>
-      <h2 class="text-white">{{ setting('site.description') }}</h2>
-      <div class="d-flex">
-        <a href="#featured-services" class="btn-get-started scrollto">Iniciar ahora</a>
+  @php
+    $total_informes = \App\Models\Publication::whereNull('deleted_at')->count();
+    $total_years    = $years->count();
+    $total_officials = \App\Models\Official::whereNull('deleted_at')->count();
+  @endphp
+  <section id="hero" class="d-flex align-items-center" style='background: url("{{ $site_banner ? Voyager::image($site_banner) : asset('images/site-banner.jpeg') }}") center center;'>
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <span class="hero-kicker"><i class="bi bi-patch-check-fill"></i> Gobierno Autónomo Departamental del Beni</span>
+      <h1>Bienvenido a <span>{{ setting('site.title') }}</span></h1>
+      <h2>{{ setting('site.description') }}</h2>
+      <div class="d-flex align-items-center flex-wrap">
+        <a href="#featured-services" class="btn-get-started scrollto">Explorar informes</a>
         <a href="https://www.youtube.com/watch?v=LMZoMUov9LQ" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span class="text-white">Ver Video</span></a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><strong>{{ $total_informes }}</strong><span>Informes publicados</span></div>
+        <div class="stat"><strong>{{ $total_years }}</strong><span>Gestiones disponibles</span></div>
+        <div class="stat"><strong>{{ $total_officials }}</strong><span>Autoridades</span></div>
       </div>
     </div>
   </section><!-- End Hero -->
+
+  <!-- ======= Accesos rápidos ======= -->
+  <section class="access">
+    <div class="container" data-aos="fade-up">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="access-card">
+            <div class="access-icon"><i class="bi bi-file-earmark-text"></i></div>
+            <h4>Informes por gestión</h4>
+            <p>Consulta los informes de auditoría general organizados por año de gestión.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="access-card">
+            <div class="access-icon"><i class="bi bi-search"></i></div>
+            <h4>Búsqueda ágil</h4>
+            <p>Encuentra rápidamente un informe por título, etiquetas o descripción.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="access-card">
+            <div class="access-icon"><i class="bi bi-shield-check"></i></div>
+            <h4>Transparencia</h4>
+            <p>Acceso público y abierto a la documentación de la Unidad de Auditoría.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Accesos -->
 
   <main id="main">
 
@@ -22,34 +63,41 @@
     <section id="featured-services" class="featured-services" style="margin-bottom: 100px">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-title" style="margin-bottom: 50px">
+        <div class="section-title" style="margin-bottom: 40px">
           <h2>Informes</h2>
           <h3>Informes <span>Ejecutivos</span></h3>
           <p>Informes de auditoría general de todas las gestiones</p>
         </div>
 
-        <div class="row">
-          <div class="col-md-3">
-            <ul class="list-group">
-              @foreach ($years->sortByDesc('year') as $item)
-                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-{{ $item->year }} @if($item->year == date('Y')) active-item @endif" data-year="{{ $item->year }}" style="cursor: pointer">
-                  <a href="#" class="a-year" data-year="{{ $item->year }}">{{ $item->year }}</a>
-                  <span class="badge rounded-pill bg-success">{{ $item->count }}</span>
-                </li>
-              @endforeach
-            </ul>
-          </div>
+        <div class="informes-panel">
+          <div class="row g-4">
+            <div class="col-md-3">
+              <ul class="list-group year-rail">
+                @foreach ($years->sortByDesc('year') as $item)
+                  <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-{{ $item->year }} @if($item->year == date('Y')) active-item @endif" data-year="{{ $item->year }}" style="cursor: pointer">
+                    <a href="#" class="a-year" data-year="{{ $item->year }}">{{ $item->year }}</a>
+                    <span class="badge rounded-pill">{{ $item->count }}</span>
+                  </li>
+                @endforeach
+              </ul>
+            </div>
 
-          <div class="col-md-9">
-            <div id="list-details"></div>
+            <div class="col-md-9">
+              <div id="list-details" style="min-height: 200px"></div>
+            </div>
           </div>
         </div>
       </div>
     </section><!-- End Featured Services Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials" style='background: url("{{ setting('site.background') ? Voyager::image(setting('site.background')) : asset('images/site-background.jpg') }}") no-repeat;'>
+    <section id="testimonials" class="testimonials" style='background: url("{{ setting('site.background') ? Voyager::image(setting('site.background')) : asset('images/site-background.jpg') }}") center center/cover no-repeat;'>
       <div class="container" data-aos="zoom-in">
+
+        <div class="section-title" style="margin-bottom: 44px">
+          <h2 style="color:#9fe6b3">Autoridades</h2>
+          <h3 style="color:#fff">Nuestras <span>Autoridades</span></h3>
+        </div>
 
         <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
